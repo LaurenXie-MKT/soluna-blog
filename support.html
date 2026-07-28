@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOLUNA Support — FAQ, Track Order & Contact Us</title>
+<meta name="description" content="Get help with your SOLUNA X1. Browse FAQs, track your order, or contact our support team.">
+<link rel="canonical" href="https://laurenxie-mkt.github.io/soluna-blog/support.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SOLUNA Support — FAQ, Track Order & Contact Us">
+<meta property="og:description" content="Get help with your SOLUNA X1. Browse FAQs, track your order, or contact our support team.">
+<meta property="og:url" content="https://laurenxie-mkt.github.io/soluna-blog/support.html">
+<style>
+
+:root {
+  --ink: #0d0f12; --charcoal: #1a1e24; --ash: #2a3038; --mist: #8b939f;
+  --cream: #f0ebe0; --gold: #b79a81; --gold-light: #b79a81;
+  --gold-glow: rgba(183,154,129,.18); --red: #c0392b; --green: #27ae60;
+  --max: 1280px; --radius: 14px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--ink); color: var(--cream); line-height: 1.65; overflow-x: hidden;
+}
+
+/* ----- NAV ----- */
+.navbar {
+  position:sticky; top:0; z-index:100;
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  background:rgba(13,15,18,.78); border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner {
+  max-width:var(--max); margin:0 auto; padding:0 32px;
+  display:flex; align-items:center; justify-content:space-between; height:68px; gap:20px;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:22px; letter-spacing:.04em; color:var(--cream); text-decoration:none; }
+.nav-logo .dot { width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 14px var(--gold-light); }
+.nav-links { display:flex; gap:6px; align-items:center; }
+.nav-links a { color:var(--mist); font-size:14px; padding:8px 14px; border-radius:8px; transition:.2s; text-decoration:none; }
+.nav-links a:hover { color:var(--cream); background:rgba(255,255,255,.05); }
+.nav-cta {
+  padding:8px 20px; border-radius:8px; background:var(--gold); color:#1a1a1a;
+  font-weight:600; font-size:14px; border:none; cursor:pointer; transition:.2s; text-decoration:none;
+}
+.nav-cta:hover { box-shadow:0 4px 20px var(--gold-glow); transform:translateY(-1px); }
+.nav-hamburger { display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer; }
+
+/* ----- PAGE HERO ----- */
+.page-hero {
+  padding:60px 32px; text-align:center;
+  background:linear-gradient(180deg, rgba(26,30,36,.6) 0%, var(--ink) 100%);
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.page-hero h1 { font-size:clamp(28px, 4vw, 44px); font-weight:700; letter-spacing:-.02em; margin-bottom:10px; }
+.page-hero p { color:var(--mist); font-size:16px; }
+
+/* ----- TAB NAVIGATION ----- */
+.tab-nav {
+  display:flex; gap:4px; max-width:var(--max); margin:0 auto; padding:32px 32px 0;
+  border-bottom:1px solid rgba(255,255,255,.06); overflow-x:auto;
+}
+.tab-btn {
+  padding:14px 24px; background:none; border:none; border-bottom:2px solid transparent;
+  color:var(--mist); font-size:15px; font-weight:600; cursor:pointer;
+  transition:.2s; font-family:inherit; white-space:nowrap;
+}
+.tab-btn:hover { color:var(--cream); }
+.tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* ----- TAB CONTENT ----- */
+section { padding:60px 32px; }
+.section-inner { max-width:var(--max); margin:0 auto; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ===== FAQ ===== */
+.faq-categories { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+.faq-cat {
+  padding:8px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.02); color:var(--mist); font-size:13px;
+  cursor:pointer; transition:.2s; font-family:inherit;
+}
+.faq-cat:hover, .faq-cat.active { border-color:var(--gold); color:var(--gold-light); background:rgba(183,154,129,.06); }
+
+.faq-list { display:grid; gap:10px; }
+.faq-item {
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius); overflow:hidden;
+}
+.faq-q {
+  width:100%; padding:20px 24px; background:none; border:none;
+  color:var(--cream); font-size:15px; font-weight:600; text-align:left;
+  cursor:pointer; display:flex; justify-content:space-between; align-items:center;
+  font-family:inherit; transition:.2s;
+}
+.faq-q:hover { background:rgba(255,255,255,.02); }
+.faq-q .faq-arrow { font-size:12px; transition:.3s; color:var(--mist); }
+.faq-q.open .faq-arrow { transform:rotate(180deg); color:var(--gold); }
+.faq-a {
+  max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease;
+  padding:0 24px; font-size:14px; color:var(--mist); line-height:1.75;
+}
+.faq-a.open { max-height:500px; padding:0 24px 20px; }
+.faq-a a { color:var(--gold-light); }
+
+/* ===== TRACK ORDER ===== */
+.track-card {
+  max-width:560px; margin:0 auto;
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius); padding:36px;
+}
+.track-card label { display:block; font-size:13px; color:var(--mist); margin-bottom:6px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+.track-card input {
+  width:100%; padding:14px 16px; margin-bottom:20px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1);
+  border-radius:10px; color:var(--cream); font-size:15px; outline:none; font-family:inherit;
+  transition:.2s;
+}
+.track-card input:focus { border-color:var(--gold); }
+.track-result {
+  margin-top:20px; padding:20px; border-radius:10px;
+  background:rgba(39,174,96,.08); border:1px solid rgba(39,174,96,.2);
+  display:none;
+}
+.track-result.show { display:block; }
+.track-result h4 { color:var(--green); margin-bottom:8px; }
+.track-result p { font-size:14px; color:var(--mist); margin-bottom:4px; }
+.track-steps { display:flex; gap:0; margin-top:16px; }
+.track-step {
+  flex:1; text-align:center; position:relative; padding:0 8px;
+}
+.track-step .ts-dot {
+  width:14px; height:14px; border-radius:50%; margin:0 auto 8px;
+  background:var(--ash); border:2px solid rgba(255,255,255,.1);
+}
+.track-step.done .ts-dot { background:var(--green); border-color:var(--green); }
+.track-step.current .ts-dot { background:var(--gold); border-color:var(--gold); box-shadow:0 0 10px var(--gold-glow); }
+.track-step .ts-label { font-size:10px; color:var(--mist); text-transform:uppercase; letter-spacing:.04em; }
+.track-step.done .ts-label, .track-step.current .ts-label { color:var(--cream); }
+
+/* ===== CONTACT US ===== */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.contact-form-card {
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius); padding:36px;
+}
+.contact-form-card label { display:block; font-size:12px; color:var(--mist); margin-bottom:4px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+.contact-form-card input, .contact-form-card select, .contact-form-card textarea {
+  width:100%; padding:12px 16px; margin-bottom:18px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1);
+  border-radius:10px; color:var(--cream); font-size:14px; outline:none; font-family:inherit;
+  transition:.2s; resize:vertical;
+}
+.contact-form-card input:focus, .contact-form-card select:focus, .contact-form-card textarea:focus { border-color:var(--gold); }
+.contact-form-card select option { background:var(--charcoal); color:var(--cream); }
+
+.contact-info-card {
+  display:flex; flex-direction:column; gap:20px;
+}
+.contact-info-item {
+  padding:24px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius); display:flex; gap:16px; align-items:flex-start;
+}
+.ci-icon { font-size:28px; flex-shrink:0; }
+.contact-info-item h4 { font-size:15px; margin-bottom:4px; }
+.contact-info-item p { font-size:13px; color:var(--mist); line-height:1.6; }
+.contact-info-item a { color:var(--gold-light); text-decoration:none; }
+.contact-info-item a:hover { text-decoration:underline; }
+
+/* Live chat card */
+.live-chat-card {
+  margin-top:20px; padding:28px; text-align:center;
+  background:linear-gradient(135deg, rgba(183,154,129,.08), rgba(183,154,129,.02));
+  border:1px solid rgba(183,154,129,.2); border-radius:var(--radius);
+}
+.live-chat-card h4 { margin-bottom:8px; }
+.live-chat-card p { font-size:13px; color:var(--mist); margin-bottom:16px; }
+
+/* ----- BUTTONS ----- */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 32px; border-radius:10px;
+  background:linear-gradient(135deg, var(--gold), var(--gold-light));
+  color:#1a1a1a; font-weight:700; font-size:15px; border:none; cursor:pointer; transition:.2s; text-decoration:none; font-family:inherit;
+}
+.btn-primary:hover { box-shadow:0 8px 30px var(--gold-glow); transform:translateY(-2px); }
+
+/* ----- FOOTER ----- */
+footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); background:var(--ink); }
+.footer-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr repeat(4, 1fr); gap:32px; }
+.footer-brand .flogo { font-size:22px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.footer-brand p { color:var(--mist); font-size:14px; line-height:1.7; }
+.footer-col h4 { font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--mist); margin-bottom:16px; }
+.footer-col a { display:block; color:var(--mist); font-size:14px; padding:5px 0; text-decoration:none; transition:.2s; }
+.footer-col a:hover { color:var(--cream); }
+.footer-bottom {
+  max-width:var(--max); margin:40px auto 0; padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:12px; font-size:13px; color:var(--mist);
+}
+.footer-social { display:flex; gap:14px; }
+.footer-social a { color:var(--mist); font-size:18px; transition:.2s; text-decoration:none; }
+.footer-social a:hover { color:var(--cream); }
+
+/* WhatsApp float */
+.whatsapp-float {
+  position:fixed; bottom:28px; right:28px; z-index:200;
+  width:56px; height:56px; border-radius:50%; background:#25D366;
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px; color:#fff; box-shadow:0 8px 30px rgba(37,211,102,.3);
+  cursor:pointer; transition:.3s; text-decoration:none;
+}
+.whatsapp-float:hover { transform:scale(1.1); }
+
+/* Toast */
+.toast {
+  position:fixed; bottom:100px; left:50%; transform:translateX(-50%);
+  padding:12px 24px; background:var(--charcoal); color:var(--cream);
+  border:1px solid rgba(255,255,255,.15); border-radius:24px;
+  font-size:14px; z-index:9999; pointer-events:none;
+  animation:fadeUp .3s ease; font-family:Inter,sans-serif;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateX(-50%) translateY(10px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+
+@media (max-width:768px) {
+  .nav-links { display:none; }
+  .nav-hamburger { display:block; }
+  section { padding:40px 16px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .tab-nav { padding:20px 16px 0; }
+  .tab-btn { padding:12px 16px; font-size:13px; }
+  .footer-inner { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .footer-inner { grid-template-columns:1fr; }
+}
+
+.tab-panel { scroll-margin-top:calc(var(--announcement-height) + 84px); }
+
+/* ===== SHARED SITE SHELL 鈥?sourced from the approved About page ===== */
+
+:root {
+  --ink: #0d0f12; --charcoal: #1a1e24; --ash: #2a3038; --mist: #8b939f;
+  --cream: #f0ebe0; --pantone-2312-c: #b79a81; --gold: #b79a81; --gold-light: #b79a81;
+  --gold-glow: rgba(183,154,129,.18); --red: #c0392b; --green: #27ae60;
+  --max: 1280px; --radius: 14px; --announcement-height: 40px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+:where(a,button,input,select,textarea):focus-visible { outline:2px solid var(--pantone-2312-c); outline-offset:3px; }
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--ink); color: var(--cream); line-height: 1.65; overflow-x: hidden;
+}
+
+/* ----- ANNOUNCEMENT + NAV ----- */
+.announcement-bar {
+  position:sticky; top:0; z-index:110; height:var(--announcement-height);
+  padding:0 20px; display:grid; place-items:center; background:var(--pantone-2312-c);
+  color:var(--ink); box-shadow:0 1px 0 rgba(255,255,255,.12);
+}
+.announcement-bar button {
+  width:100%; height:100%; border:0; background:transparent; color:inherit;
+  font:inherit; font-size:14px; font-weight:650; cursor:pointer; text-align:center;
+}
+.announcement-bar strong { font-weight:850; }
+.announcement-bar button:hover { text-decoration:underline; text-underline-offset:3px; }
+.announcement-bar button:focus-visible { outline:2px solid var(--ink); outline-offset:-4px; }
+.navbar {
+  position:sticky; top:var(--announcement-height); z-index:100;
+  backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+  background:rgba(13,15,18,.78); border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-inner {
+  max-width:var(--max); margin:0 auto; padding:0 32px;
+  display:flex; align-items:center; justify-content:space-between; height:68px; gap:20px;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:22px; letter-spacing:.04em; color:var(--cream); text-decoration:none; }
+.nav-logo .dot { width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 14px var(--gold-light); }
+.nav-links { display:flex; gap:6px; align-items:center; }
+.nav-links a { color:var(--mist); font-size:14px; padding:8px 14px; border-radius:8px; transition:.2s; text-decoration:none; }
+.nav-links a:hover { color:var(--cream); background:rgba(255,255,255,.05); }
+.nav-dropdown { position:relative; }
+.nav-dropdown-trigger { display:flex; align-items:center; gap:6px; padding:8px 14px; border:0; border-radius:8px; background:transparent; color:var(--mist); font:inherit; font-size:14px; cursor:pointer; transition:.2s; }
+.nav-dropdown-trigger:hover, .nav-dropdown:focus-within .nav-dropdown-trigger { color:var(--cream); background:rgba(255,255,255,.05); }
+.nav-dropdown-trigger svg { width:12px; height:12px; transition:transform .2s; }
+.nav-dropdown:hover .nav-dropdown-trigger svg, .nav-dropdown:focus-within .nav-dropdown-trigger svg { transform:rotate(180deg); }
+.nav-dropdown-menu { position:absolute; top:calc(100% + 10px); left:0; min-width:190px; padding:8px; background:rgba(23,27,32,.98); border:1px solid rgba(255,255,255,.1); border-radius:12px; box-shadow:0 18px 50px rgba(0,0,0,.42); opacity:0; visibility:hidden; transform:translateY(-6px); transition:opacity .18s, transform .18s, visibility .18s; }
+.nav-dropdown-menu::before { content:''; position:absolute; left:0; right:0; top:-12px; height:12px; }
+.nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { opacity:1; visibility:visible; transform:translateY(0); }
+.nav-dropdown-menu a { display:block; padding:10px 12px; color:var(--cream); white-space:nowrap; }
+.nav-dropdown-menu a:hover { color:var(--gold-light); background:rgba(183,154,129,.08); }
+.nav-cta {
+  padding:8px 20px; border-radius:8px; background:var(--gold); color:#1a1a1a;
+  font-weight:600; font-size:14px; border:none; cursor:pointer; transition:.2s; text-decoration:none;
+}
+.nav-cta:hover { box-shadow:0 4px 20px var(--gold-glow); transform:translateY(-1px); }
+.nav-hamburger { display:none; background:none; border:none; color:var(--cream); font-size:24px; cursor:pointer; }
+.nav-cart-btn {
+  position:relative; background:none; border:none; color:var(--cream); font-size:20px;
+  cursor:pointer; padding:6px 10px; border-radius:8px; transition:.2s;
+}
+.nav-cart-btn:hover { background:rgba(255,255,255,.05); }
+.nav-actions { display:flex; align-items:center; gap:4px; }
+.nav-icon-btn { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; position:relative; border:0; border-radius:10px; background:transparent; color:var(--cream); cursor:pointer; transition:.2s; }
+.nav-icon-btn:hover { background:rgba(255,255,255,.06); color:var(--gold-light); }
+.nav-icon-btn svg { width:24px; height:24px; stroke:currentColor; }
+.language-flag { width:26px; height:26px; display:block; border-radius:50%; }
+.language-menu { right:0; left:auto; min-width:150px; }
+.language-menu button { width:100%; padding:10px 12px; border:0; border-radius:8px; background:transparent; color:var(--cream); text-align:left; cursor:pointer; font:inherit; font-size:13px; }
+.language-menu button:hover { color:var(--gold-light); background:rgba(183,154,129,.08); }
+.nav-cart-badge {
+  position:absolute; top:-2px; right:-2px;
+  background:var(--gold); color:#1a1a1a; font-size:10px; font-weight:700;
+  width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  display:none;
+}
+.nav-cart-badge.has-items { display:flex; }
+
+/* ----- PAGE HERO ----- */
+.page-hero {
+  padding:60px 32px; text-align:center;
+  background:linear-gradient(180deg, rgba(26,30,36,.6) 0%, var(--ink) 100%);
+  border-bottom:1px solid rgba(255,255,255,.04);
+}
+.page-hero h1 { font-size:clamp(28px, 4vw, 44px); font-weight:700; letter-spacing:-.02em; margin-bottom:10px; }
+.page-hero p { color:var(--mist); font-size:16px; }
+
+/* ----- TAB NAVIGATION ----- */
+.tab-nav {
+  display:flex; gap:4px; max-width:var(--max); margin:0 auto; padding:32px 32px 0;
+  border-bottom:1px solid rgba(255,255,255,.06); overflow-x:auto;
+}
+.tab-btn {
+  padding:14px 24px; background:none; border:none; border-bottom:2px solid transparent;
+  color:var(--mist); font-size:15px; font-weight:600; cursor:pointer;
+  transition:.2s; font-family:inherit; white-space:nowrap;
+}
+.tab-btn:hover { color:var(--cream); }
+.tab-btn.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* ----- CONTENT ----- */
+section { padding:60px 32px; }
+.section-inner { max-width:var(--max); margin:0 auto; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* ===== ABOUT SOLUNA ===== */
+.about-hero-grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:48px; align-items:center; margin-bottom:48px; }
+.about-hero-img {
+  aspect-ratio:1/1; border-radius:var(--radius); overflow:hidden;
+  position:relative; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg, var(--charcoal) 0%, var(--ash) 100%);
+}
+.about-hero-img img {
+  width:100%; height:100%; object-fit:cover; display:block;
+  position:relative; z-index:1;
+}
+.about-hero-text h2 { font-size:30px; line-height:1.25; margin-bottom:16px; letter-spacing:-.01em; }
+.about-hero-text p { font-size:15px; color:var(--mist); line-height:1.8; margin-bottom:12px; }
+.about-hero-text { min-width:0; overflow-wrap:anywhere; }
+
+/* Mission / Values / Story */
+.mission-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:32px; }
+.mission-card {
+  padding:28px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);
+  border-radius:var(--radius); text-align:center; transition:.2s;
+}
+.mission-card:hover { border-color:rgba(183,154,129,.2); }
+.mission-card .mc-icon { font-size:40px; margin-bottom:14px; }
+.mission-card h4 { font-size:17px; margin-bottom:8px; }
+.mission-card p { font-size:14px; color:var(--mist); line-height:1.6; }
+
+/* Timeline style */
+.timeline { margin:32px 0; }
+.tl-item { display:flex; gap:20px; margin-bottom:24px; }
+.tl-year {
+  flex-shrink:0; width:72px; font-size:20px; font-weight:800; color:var(--gold);
+  padding-top:4px; text-align:right;
+}
+.tl-content { flex:1; padding:18px 20px; background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); }
+.tl-content h4 { font-size:16px; margin-bottom:4px; }
+.tl-content p { font-size:14px; color:var(--mist); }
+
+/* Stats row */
+.stats-row { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin-top:32px; }
+.stat-item {
+  text-align:center; padding:24px 12px; background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06); border-radius:var(--radius);
+}
+.stat-value { font-size:32px; font-weight:800; color:var(--gold-light); }
+.stat-label { font-size:12px; color:var(--mist); text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
+
+/* ===== AFFILIATE PROGRAM ===== */
+.affiliate-hero {
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;
+  padding:40px; background:linear-gradient(135deg, rgba(183,154,129,.06), rgba(183,154,129,.01));
+  border:1px solid rgba(183,154,129,.15); border-radius:var(--radius); margin-bottom:40px;
+}
+.affiliate-hero-text h2 { font-size:28px; line-height:1.2; margin-bottom:12px; }
+.affiliate-hero-text p { font-size:15px; color:var(--mist); line-height:1.7; }
+.affiliate-hero-stat { text-align:center; }
+.affiliate-hero-stat .big-num { font-size:64px; font-weight:800; color:var(--gold-light); line-height:1; }
+.affiliate-hero-stat p { color:var(--mist); font-size:14px; margin-top:8px; }
+
+/* Commission tiers */
+.commission-tiers { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin:24px 0; }
+.tier-card {
+  padding:28px 20px; text-align:center; background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); transition:.2s;
+}
+.tier-card.featured { border-color:rgba(183,154,129,.3); background:rgba(183,154,129,.04); }
+.tier-card .tier-pct { font-size:36px; font-weight:800; color:var(--gold-light); }
+.tier-card .tier-name { font-size:14px; color:var(--mist); margin:6px 0; }
+.tier-card .tier-desc { font-size:13px; color:var(--mist); line-height:1.5; }
+
+/* How it works steps */
+.affiliate-steps { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin:24px 0; }
+.af-step {
+  text-align:center; padding:24px 16px; background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); position:relative;
+}
+.af-step .af-num {
+  width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-light));
+  color:#1a1a1a; font-weight:800; font-size:18px; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 10px;
+}
+.af-step h4 { font-size:14px; margin-bottom:4px; }
+.af-step p { font-size:12px; color:var(--mist); line-height:1.5; }
+
+/* ===== BECOME A PARTNER ===== */
+.partner-options { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; margin:32px 0; }
+.partner-card {
+  padding:32px 24px; text-align:center; background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); transition:.2s;
+}
+.partner-card:hover { border-color:rgba(183,154,129,.25); transform:translateY(-4px); }
+.partner-card .pc-icon { font-size:44px; margin-bottom:14px; }
+.partner-card h4 { font-size:18px; margin-bottom:8px; }
+.partner-card p { font-size:14px; color:var(--mist); line-height:1.6; margin-bottom:6px; }
+.partner-card .pc-benefits { list-style:none; margin-top:14px; text-align:left; }
+.partner-card .pc-benefits li {
+  font-size:13px; color:var(--mist); padding:4px 0; display:flex; align-items:center; gap:8px;
+}
+.partner-card .pc-benefits li::before { content:'✓'; color:var(--green); font-weight:700; }
+
+/* Partner form */
+.partner-form-card {
+  max-width:640px; margin:0 auto; padding:36px;
+  background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+}
+.partner-form-card label { display:block; font-size:12px; color:var(--mist); margin-bottom:4px; text-transform:uppercase; letter-spacing:.06em; font-weight:600; }
+.partner-form-card input, .partner-form-card select, .partner-form-card textarea {
+  width:100%; padding:12px 16px; margin-bottom:16px;
+  background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1);
+  border-radius:10px; color:var(--cream); font-size:14px; outline:none; font-family:inherit;
+  transition:.2s; resize:vertical;
+}
+.partner-form-card input:focus, .partner-form-card select:focus, .partner-form-card textarea:focus { border-color:var(--gold); }
+.partner-form-card select option { background:var(--charcoal); color:var(--cream); }
+
+/* ----- BUTTONS ----- */
+.btn-primary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 32px; border-radius:10px;
+  background:linear-gradient(135deg, var(--gold), var(--gold-light));
+  color:#1a1a1a; font-weight:700; font-size:15px; border:none; cursor:pointer; transition:.2s; text-decoration:none; font-family:inherit;
+}
+.btn-primary:hover { box-shadow:0 8px 30px var(--gold-glow); transform:translateY(-2px); }
+.btn-secondary {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 32px; border-radius:10px;
+  background:transparent; border:1px solid rgba(255,255,255,.2);
+  color:var(--cream); font-weight:600; font-size:15px; cursor:pointer; transition:.2s; text-decoration:none; font-family:inherit;
+}
+.btn-secondary:hover { border-color:var(--pantone-2312-c); background:rgba(183,154,129,.09); }
+
+/* Toast */
+.toast {
+  position:fixed; bottom:100px; left:50%; transform:translateX(-50%);
+  padding:12px 24px; background:var(--charcoal); color:var(--cream);
+  border:1px solid rgba(255,255,255,.15); border-radius:24px;
+  font-size:14px; z-index:9999; pointer-events:none;
+  animation:fadeUp .3s ease; font-family:Inter,sans-serif;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateX(-50%) translateY(10px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+
+/* ----- UNIFIED ABOUT CONTENT ----- */
+.page-hero { padding:72px 32px 64px; background:linear-gradient(180deg, rgba(26,30,36,.78), var(--ink)); }
+.page-hero h1 { font-size:clamp(34px,5vw,58px); }
+.tab-nav { top:calc(var(--announcement-height) + 68px); z-index:80; background:rgba(13,15,18,.92); backdrop-filter:blur(16px); }
+.tab-btn { border-bottom-width:2px; }
+.tab-btn.active { color:var(--pantone-2312-c); border-color:var(--pantone-2312-c); }
+.about-hero-img { min-height:440px; background:linear-gradient(145deg,#f7f7f5,#e4e2de); }
+.about-hero-img img { width:100%; height:100%; object-fit:contain; }
+.mission-card,.value-card,.tier-card,.partner-card,.partner-form-card,.step-card { border-color:rgba(255,255,255,.075); }
+.mission-card:hover,.value-card:hover,.tier-card:hover,.partner-card:hover { border-color:rgba(183,154,129,.3); }
+.btn-primary { background:var(--pantone-2312-c); }
+.btn-secondary { border-color:var(--pantone-2312-c); color:var(--pantone-2312-c); }
+.btn-secondary:hover { background:rgba(183,154,129,.09); }
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; animation-duration:.01ms!important; } }
+
+/* ----- NEWSLETTER ----- */
+.newsletter {
+  padding:72px 32px; border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(135deg, rgba(183,154,129,.12), rgba(26,30,36,.58));
+}
+.newsletter-inner { max-width:720px; margin:0 auto; text-align:center; }
+.newsletter-eyebrow { color:var(--pantone-2312-c); font-size:12px; font-weight:800; letter-spacing:.16em; }
+.newsletter h2 { margin:8px 0; font-size:clamp(28px,4vw,40px); letter-spacing:-.025em; }
+.newsletter-copy { color:var(--mist); font-size:15px; }
+.newsletter-form { margin:24px auto 0; max-width:620px; }
+.newsletter-row { display:grid; grid-template-columns:1fr auto; gap:10px; }
+.newsletter-row input {
+  width:100%; min-height:48px; padding:13px 15px; border:1px solid rgba(255,255,255,.14);
+  border-radius:9px; background:rgba(13,15,18,.72); color:var(--cream); font:inherit;
+}
+.newsletter-row input:focus { outline:2px solid var(--pantone-2312-c); outline-offset:2px; }
+.newsletter-row button {
+  min-height:48px; padding:12px 22px; border:0; border-radius:9px;
+  background:var(--pantone-2312-c); color:var(--ink); font:inherit; font-weight:800; cursor:pointer;
+}
+.newsletter-consent { display:flex; justify-content:center; align-items:flex-start; gap:9px; margin-top:14px; color:var(--mist); font-size:12px; text-align:left; }
+.newsletter-consent input { margin-top:3px; accent-color:var(--pantone-2312-c); }
+.newsletter-consent a { color:var(--cream); }
+.newsletter-note,.newsletter-status { margin-top:10px; color:var(--mist); font-size:12px; }
+.newsletter-status { min-height:20px; color:var(--cream); }
+
+/* ----- FOOTER ----- */
+footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); background:var(--ink); }
+.footer-inner { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr repeat(4, 1fr); gap:32px; }
+.footer-brand .flogo { font-size:22px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.footer-brand p { color:var(--mist); font-size:14px; line-height:1.7; }
+.footer-col h4 { font-size:13px; text-transform:uppercase; letter-spacing:.1em; color:var(--mist); margin-bottom:16px; }
+.footer-col a { display:block; color:var(--mist); font-size:14px; padding:5px 0; text-decoration:none; transition:.2s; }
+.footer-col a:hover { color:var(--cream); }
+.footer-bottom {
+  max-width:var(--max); margin:40px auto 0; padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between;
+  flex-wrap:wrap; gap:12px; font-size:13px; color:var(--mist);
+}
+.footer-utility {
+  max-width:var(--max); margin:20px auto 0; padding-right:80px;
+  display:flex; flex-direction:column; align-items:flex-end;
+}
+.secure-payment-lockup {
+  position:relative; width:min(448px, calc(100% - 96px)); aspect-ratio:448 / 40;
+  overflow:hidden;
+}
+.secure-payment-lockup img {
+  position:absolute; width:152.68%; max-width:none; height:auto;
+  left:-17.4%; top:-140%; display:block;
+}
+.footer-follow {
+  width:min(448px, calc(100% - 96px)); margin-top:22px; padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08); display:grid;
+  grid-template-columns:1fr auto; gap:24px; align-items:center;
+}
+.footer-follow h4 {
+  margin:0 0 5px; color:var(--pantone-2312-c); font-size:12px;
+  font-weight:800; letter-spacing:.16em;
+}
+.footer-follow p { margin:0; color:var(--mist); font-size:13px; line-height:1.5; }
+.footer-follow-icons { display:flex; align-items:center; gap:10px; }
+.footer-follow-icons a {
+  width:42px; height:42px; border:1px solid rgba(255,255,255,.12); border-radius:50%;
+  color:var(--cream); display:grid; place-items:center; text-decoration:none; transition:.2s;
+}
+.footer-follow-icons a:hover, .footer-follow-icons a:focus-visible {
+  border-color:var(--pantone-2312-c); color:var(--pantone-2312-c); transform:translateY(-2px);
+}
+.footer-follow-icons svg { width:20px; height:20px; fill:currentColor; }
+
+/* WhatsApp float */
+.whatsapp-float {
+  position:fixed; bottom:28px; right:28px; z-index:200;
+  width:56px; height:56px; border-radius:50%; background:#25D366;
+  display:flex; align-items:center; justify-content:center;
+  font-size:28px; color:#fff; box-shadow:0 8px 30px rgba(37,211,102,.3);
+  cursor:pointer; transition:.3s; text-decoration:none;
+}
+.whatsapp-float:hover { transform:scale(1.1); }
+.whatsapp-float img { width:100%; height:100%; object-fit:cover; border-radius:50%; display:block; }
+
+/* Read more / expand btn */
+.btn-expand {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:10px 20px; border-radius:8px; border:1px solid var(--gold);
+  background:transparent; color:var(--gold); font-weight:600; font-size:14px;
+  cursor:pointer; transition:.2s; font-family:inherit;
+}
+.btn-expand:hover { background:rgba(183,154,129,.1); }
+
+/* ===== CART SIDEBAR (compact) ===== */
+.cart-overlay { position:fixed; inset:0; z-index:500; background:rgba(0,0,0,0.6); display:none; }
+.cart-overlay.show { display:block; }
+.cart-sidebar {
+  position:fixed; top:0; right:0; z-index:501; width:420px; max-width:100vw; height:100vh;
+  background:var(--charcoal); border-left:1px solid rgba(255,255,255,.08);
+  display:flex; flex-direction:column; transform:translateX(100%);
+  transition:transform .35s cubic-bezier(0.4,0,0.2,1); box-shadow:-10px 0 40px rgba(0,0,0,.4);
+}
+.cart-sidebar.show { transform:translateX(0); }
+.cart-header { display:flex; align-items:center; justify-content:space-between; padding:20px 24px; border-bottom:1px solid rgba(255,255,255,.08); }
+.cart-header h3 { font-size:20px; display:flex; align-items:center; gap:10px; }
+.cart-close { background:none; border:none; color:var(--mist); font-size:24px; cursor:pointer; padding:4px 8px; }
+.cart-items { flex:1; overflow-y:auto; padding:16px 24px; }
+.cart-item { display:flex; gap:14px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,.06); align-items:flex-start; }
+.cart-item-img { width:72px; height:72px; border-radius:8px; background:var(--ash); display:flex; align-items:center; justify-content:center; font-size:32px; flex-shrink:0; }
+.cart-item-info { flex:1; }
+.cart-item-info h4 { font-size:15px; margin-bottom:4px; }
+.cart-item-info .ci-price { color:var(--gold-light); font-weight:700; font-size:16px; }
+.cart-qty-row { display:flex; align-items:center; gap:10px; margin-top:8px; }
+.cart-qty-row button { width:28px; height:28px; border-radius:6px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.03); color:var(--cream); cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; }
+.cart-qty-row span { min-width:20px; text-align:center; font-weight:600; }
+.cart-item-remove { color:var(--red); background:none; border:none; cursor:pointer; font-size:12px; margin-top:8px; }
+.cart-empty { text-align:center; padding:60px 20px; color:var(--mist); }
+.cart-footer { padding:20px 24px; border-top:1px solid rgba(255,255,255,.08); background:rgba(0,0,0,.2); }
+.cart-total-row { display:flex; justify-content:space-between; align-items:center; padding:0 0 16px; font-size:17px; }
+.cart-total-row .total-price { font-size:28px; font-weight:800; color:var(--gold-light); }
+.cart-payment-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.cart-payment-btn { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; border-radius:10px; font-size:14px; font-weight:600; cursor:pointer; border:none; transition:.2s; font-family:inherit; }
+.cart-paypal { background:var(--pantone-2312-c); color:#1a1a1a; }
+.cart-stripe { background:#635bff; color:#fff; }
+.cart-whatsapp { background:#25D366; color:#fff; grid-column:1/-1; }
+.cart-tax-note { font-size:11px; color:var(--mist); text-align:center; margin-top:10px; }
+.register-overlay { position:fixed; inset:0; z-index:550; display:none; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0,.72); backdrop-filter:blur(8px); }
+.register-overlay.show { display:flex; }
+.register-card { width:min(420px,100%); padding:30px; border:1px solid rgba(255,255,255,.1); border-radius:16px; background:var(--charcoal); box-shadow:0 24px 70px rgba(0,0,0,.5); }
+.register-card h2 { font-size:24px; margin-bottom:6px; }
+.register-card p { color:var(--mist); font-size:14px; margin-bottom:20px; }
+.register-card input { width:100%; margin-bottom:12px; padding:13px 14px; border:1px solid rgba(255,255,255,.12); border-radius:9px; background:rgba(255,255,255,.04); color:var(--cream); font:inherit; }
+.register-actions { display:flex; gap:10px; margin-top:4px; }
+.register-actions button { flex:1; padding:12px; border-radius:9px; border:1px solid rgba(255,255,255,.14); background:transparent; color:var(--cream); font-weight:700; cursor:pointer; }
+.register-actions .register-submit { border-color:var(--gold); background:var(--gold); color:#181818; }
+
+@media (max-width:1024px) {
+  .about-hero-grid { grid-template-columns:1fr; }
+  .about-hero-img { width:100%; min-width:0; min-height:0; }
+  .affiliate-hero { grid-template-columns:1fr; }
+  .commission-tiers, .partner-options { grid-template-columns:1fr; }
+  .affiliate-steps { grid-template-columns:repeat(2, 1fr); }
+  .stats-row { grid-template-columns:repeat(2, 1fr); }
+  .mission-grid { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  :root { --announcement-height:48px; }
+  .announcement-bar { padding:0 14px; }
+  .announcement-bar button { font-size:13px; line-height:1.25; }
+  .nav-inner { padding:0 12px; gap:4px; }
+  .nav-logo { font-size:19px; gap:7px; }
+  .nav-logo .dot { width:8px; height:8px; }
+  .nav-actions { margin-left:auto; gap:0; }
+  .nav-icon-btn { width:36px; height:40px; }
+  .language-flag { width:24px; height:24px; }
+  .nav-cta { display:none; }
+  .footer-utility { width:100%; padding-right:0; align-items:center; }
+  .secure-payment-lockup { width:min(448px,100%); }
+  .footer-follow { width:min(448px,100%); margin-bottom:56px; }
+  .nav-links { display:none; }
+  .nav-links.mobile-open {
+    position:absolute; top:68px; left:0; right:0; display:flex; flex-direction:column; align-items:stretch;
+    padding:14px 16px 18px; background:rgba(13,15,18,.98); border-bottom:1px solid rgba(255,255,255,.08);
+    box-shadow:0 18px 38px rgba(0,0,0,.36);
+  }
+  .nav-links.mobile-open > a,.nav-links.mobile-open .nav-dropdown-trigger { width:100%; justify-content:space-between; padding:12px 14px; text-align:left; }
+  .nav-links.mobile-open .nav-dropdown-menu { position:static; display:none; min-width:0; margin:2px 0 8px; opacity:1; visibility:visible; transform:none; box-shadow:none; }
+  .nav-links.mobile-open .nav-dropdown:focus-within .nav-dropdown-menu { display:block; }
+  .nav-hamburger { display:block; width:36px; height:40px; font-size:20px; }
+  section { padding:40px 16px; }
+  .newsletter { padding:52px 16px; }
+  .newsletter-row { grid-template-columns:1fr; }
+  .newsletter-row button { width:100%; }
+  .tab-nav { padding:20px 16px 0; }
+  .tab-nav { width:100%; max-width:100%; overscroll-behavior-inline:contain; }
+  .tab-btn { padding:12px 16px; font-size:13px; }
+  .affiliate-steps { grid-template-columns:1fr; }
+  .footer-inner { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .nav-inner { padding:0 8px; }
+  .nav-logo { font-size:18px; }
+  .nav-icon-btn,.nav-hamburger { width:34px; }
+  .footer-follow { grid-template-columns:1fr; gap:14px; }
+  .stats-row { grid-template-columns:1fr 1fr; }
+  .footer-inner { grid-template-columns:1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== SIGN-UP OFFER ===== -->
+<div class="announcement-bar">
+  <button type="button" onclick="openRegisterModal()" aria-label="Register now to get 10% off your first order">
+    Sign up now and get <strong>10% off</strong> your first order!
+  </button>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="soluna-homepage.html#hero" class="nav-logo"><span class="dot"></span>SOLUNA</a>
+    <div class="nav-links" id="primaryNav">
+      <a href="soluna-homepage.html#hero">Home</a>
+      <a href="soluna-x1.html">SOLUNA X1</a>
+      <a href="blog.html#post2">Blog</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" type="button" style="color:var(--pantone-2312-c);">Support <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <div class="nav-dropdown-menu"><a href="support.html#faq">FAQ</a><a href="support.html#contact">Contact</a><a href="support.html#track">Track Order</a></div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" type="button">About <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <div class="nav-dropdown-menu"><a href="about.html#about">About SOLUNA</a><a href="about.html#affiliate">Affiliate Program</a><a href="about.html#partner">Become a Partner</a><a href="blog.html">Blog</a></div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-dropdown">
+        <button class="nav-icon-btn" type="button" title="Language" aria-label="Choose language"><img class="language-flag" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJFbmdsaXNoIGxhbmd1YWdlIj4KICA8ZGVmcz48Y2xpcFBhdGggaWQ9ImMiPjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjIyIi8+PC9jbGlwUGF0aD48L2RlZnM+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2MpIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0yIDJoNDR2NDRIMnoiLz4KICAgIDxwYXRoIHN0cm9rZT0iI2RmM2U0YiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtZGFzaGFycmF5PSI0IDQiIGQ9Ik0yIDRoNDRNMiAxMmg0NE0yIDIwaDQ0TTIgMjhoNDRNMiAzNmg0NE0yIDQ0aDQ0Ii8+CiAgICA8cGF0aCBmaWxsPSIjMjg0YjhmIiBkPSJNMiAyaDIwdjIwSDJ6Ii8+CiAgICA8ZyBmaWxsPSIjZmZmIj48Y2lyY2xlIGN4PSI3IiBjeT0iNyIgcj0iMSIvPjxjaXJjbGUgY3g9IjEzIiBjeT0iNyIgcj0iMSIvPjxjaXJjbGUgY3g9IjE5IiBjeT0iNyIgcj0iMSIvPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTIiIHI9IjEiLz48Y2lyY2xlIGN4PSIxNiIgY3k9IjEyIiByPSIxIi8+PGNpcmNsZSBjeD0iNyIgY3k9IjE3IiByPSIxIi8+PGNpcmNsZSBjeD0iMTMiIGN5PSIxNyIgcj0iMSIvPjxjaXJjbGUgY3g9IjE5IiBjeT0iMTciIHI9IjEiLz48L2c+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjIyIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsLjUpIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+Cg==" alt="English"></button>
+        <div class="nav-dropdown-menu language-menu"><button type="button" onclick="setLanguage('en')">English</button><button type="button" onclick="setLanguage('de')">Deutsch</button><button type="button" onclick="setLanguage('fr')">Français</button><button type="button" onclick="setLanguage('zh')">中文</button></div>
+      </div>
+      <button class="nav-icon-btn" type="button" onclick="openRegisterModal()" title="Register" aria-label="Register"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="7" r="4" stroke-width="1.7"/><path d="M4 21v-2.4A5.6 5.6 0 0 1 9.6 13h4.8a5.6 5.6 0 0 1 5.6 5.6V21H4Z" stroke-width="1.7"/></svg></button>
+      <button class="nav-icon-btn nav-cart-btn" onclick="openCart()" title="Cart" aria-label="Open cart"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg><span class="nav-cart-badge" id="navCartBadge">0</span></button>
+      <a href="soluna-x1.html" class="nav-cta">Shop X1</a>
+    </div>
+    <button class="nav-hamburger" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation" onclick="toggleNav(this)">☰</button>
+  </div>
+</nav>
+
+<main id="main-content">
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <h1>How can we help you?</h1>
+  <p>Browse FAQs, track your order, or get in touch with our team.</p>
+</section>
+
+<!-- ===== TAB NAVIGATION ===== -->
+<div class="tab-nav">
+  <button type="button" class="tab-btn active" onclick="switchTab('faq', this)">📖 FAQ</button>
+  <button type="button" class="tab-btn" onclick="switchTab('track', this)">📦 Track Your Order</button>
+  <button type="button" class="tab-btn" onclick="switchTab('contact', this)">💬 Contact Us</button>
+</div>
+
+<!-- ===== TAB: FAQ ===== -->
+<section id="faq" class="tab-panel active">
+  <div class="section-inner">
+    <div class="faq-categories">
+      <button type="button" class="faq-cat active" onclick="filterFaq('all', this)">All Topics</button>
+      <button type="button" class="faq-cat" onclick="filterFaq('product', this)">Product</button>
+      <button type="button" class="faq-cat" onclick="filterFaq('shipping', this)">Shipping</button>
+      <button type="button" class="faq-cat" onclick="filterFaq('payment', this)">Payment</button>
+      <button type="button" class="faq-cat" onclick="filterFaq('warranty', this)">Warranty</button>
+    </div>
+
+    <div class="faq-list">
+
+      <!-- Product -->
+      <div class="faq-item" data-faq-cat="product">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Does SOLUNA X1 produce enough smoke compared to traditional hookah?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>SOLUNA X1 uses intelligent electric heating designed to deliver full clouds and more consistent flavor. Results vary by bowl preparation, tobacco style, temperature setting and use.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="product">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Can I use my own shisha tobacco with SOLUNA X1?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>SOLUNA X1 is designed for Dark and Blonde shisha tobacco. Use the included bowls and adapters as described in the manual, and confirm compatibility before use.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="product">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>How long does the battery last? Is it replaceable?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>The removable 20,000mAh battery provides approximately 3 hours of reference runtime. Actual runtime varies by heat setting and use. Contact Support for current spare-battery availability.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="product">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>How do I clean the SOLUNA X1?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>Switch off the device and allow it to cool completely. Clean approved removable components according to the SOLUNA manual. Keep liquid away from electronic components and never immerse the main unit or battery.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="product">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Is SOLUNA X1 a vape or e-cigarette?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>No. SOLUNA X1 heats real hookah molasses (shisha tobacco) — not e-liquid or nicotine salts. It's the authentic hookah experience with the same tobacco you're used to, just heated electrically instead of with charcoal.</p></div>
+      </div>
+
+      <!-- Shipping -->
+      <div class="faq-item" data-faq-cat="shipping">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Where do you ship? How much does shipping cost?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>We ship worldwide. Shipping is <strong>free</strong> on all orders. Delivery typically takes 5–12 business days depending on your location. Express shipping options are available at checkout for faster delivery.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="shipping">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>How can I track my order?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>Once your order ships, you'll receive a confirmation email with a tracking number. You can also track your order anytime on the <a href="support.html#track" onclick="switchTab('track', document.querySelectorAll('.tab-btn')[1])">Track Your Order</a> tab above.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="shipping">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Do you ship to my country?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>SOLUNA ships to most countries worldwide. If you're unsure, contact us with your location and we'll confirm availability. Please note that some countries may have import restrictions on hookah-related products.</p></div>
+      </div>
+
+      <!-- Payment -->
+      <div class="faq-item" data-faq-cat="payment">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>What payment methods do you accept?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>We accept PayPal, all major credit/debit cards (via Stripe), and WhatsApp ordering with bank transfer. All payments are processed securely with SSL encryption.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="payment">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>Is my payment information secure?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>Yes. We use industry-standard SSL encryption and never store your full credit card details. All payments are processed through PayPal or Stripe — two of the world's most trusted payment gateways.</p></div>
+      </div>
+
+      <!-- Warranty -->
+      <div class="faq-item" data-faq-cat="warranty">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>What does the warranty cover?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>Every SOLUNA X1 comes with a <strong>1-year limited warranty</strong> covering manufacturing defects and hardware malfunctions. This does not cover damage from misuse, unauthorized modifications, or normal wear and tear. Extended warranty plans are available. See our <a href="information.html">Warranty page</a> for full details.</p></div>
+      </div>
+      <div class="faq-item" data-faq-cat="warranty">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)"><span>What's your return policy?</span><span class="faq-arrow">▼</span></button>
+        <div class="faq-a"><p>We offer a <strong>30-day money-back guarantee</strong>. If you're not satisfied with your SOLUNA X1 for any reason, you can return it within 30 days of delivery for a full refund. The device must be in its original condition with all accessories. See our <a href="information.html#returns">Return Policy</a> for details.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TAB: TRACK ORDER ===== -->
+<section id="track" class="tab-panel">
+  <div class="section-inner">
+    <div class="track-card">
+      <h2 style="font-size:22px;margin-bottom:8px;">📦 Track Your Order</h2>
+      <p style="font-size:14px;color:var(--mist);margin-bottom:28px;">Enter your order number and email to see the status of your shipment.</p>
+      <label for="orderNumber">Order Number</label>
+      <input type="text" id="orderNumber" placeholder="e.g. SOL-20260701-001">
+      <label for="orderEmail">Email Address</label>
+      <input type="email" id="orderEmail" placeholder="Enter the email used for your order">
+      <button type="button" class="btn-primary" style="width:100%;justify-content:center;" onclick="trackOrder()">🔍 Track My Order</button>
+
+      <!-- Demo: Shows a tracking result -->
+      <div class="track-result" id="trackResult">
+        <h4>✅ Order tracking preview</h4>
+        <p><strong>Order:</strong> <span id="trackOrderNum"></span></p>
+        <p><strong>Status:</strong> In Transit</p>
+        <p><strong>Estimated Delivery:</strong> July 12, 2026</p>
+        <p style="margin-top:8px;font-size:13px;"><strong>Carrier:</strong> DHL Express · <strong>Tracking #:</strong> DHLSOL123456789</p>
+        <div class="track-steps">
+          <div class="track-step done"><div class="ts-dot"></div><div class="ts-label">Ordered</div></div>
+          <div class="track-step done"><div class="ts-dot"></div><div class="ts-label">Processed</div></div>
+          <div class="track-step current"><div class="ts-dot"></div><div class="ts-label">In Transit</div></div>
+          <div class="track-step"><div class="ts-dot"></div><div class="ts-label">Delivered</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TAB: CONTACT US ===== -->
+<section id="contact" class="tab-panel">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-form-card">
+        <h2 style="font-size:22px;margin-bottom:8px;">💬 Send Us a Message</h2>
+        <p style="font-size:14px;color:var(--mist);margin-bottom:24px;">We typically respond within 2–4 hours during business days.</p>
+        <label for="contactName">Full Name</label>
+        <input type="text" id="contactName" placeholder="Your name">
+        <label for="contactEmail">Email Address</label>
+        <input type="email" id="contactEmail" placeholder="your@email.com">
+        <label for="contactTopic">Topic</label>
+        <select id="contactTopic">
+          <option value="">Select a topic</option>
+          <option>Product Questions</option>
+          <option>Order Issues</option>
+          <option>Warranty Claim</option>
+          <option>Wholesale Inquiry</option>
+          <option>Affiliate Program</option>
+          <option>Press & Media</option>
+          <option>Other</option>
+        </select>
+        <label for="contactMsg">Message</label>
+        <textarea id="contactMsg" rows="5" placeholder="Tell us how we can help..."></textarea>
+        <button type="button" class="btn-primary" style="width:100%;justify-content:center;" onclick="submitContact()">📨 Send Message</button>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="contact-info-item">
+          <div class="ci-icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>General: <a href="mailto:hello@soluna-hookah.com">hello@soluna-hookah.com</a></p>
+            <p>Support: <a href="mailto:support@soluna-hookah.com">support@soluna-hookah.com</a></p>
+            <p>Wholesale: <a href="mailto:partners@soluna-hookah.com">partners@soluna-hookah.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon">💬</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>Chat with us directly for quick answers and order support.</p>
+            <a href="https://wa.me/" style="margin-top:6px;display:inline-block;">Start WhatsApp Chat →</a>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <h4>Business Hours</h4>
+            <p>Monday – Friday: 9:00 AM – 6:00 PM (EST)</p>
+            <p>Saturday: 10:00 AM – 4:00 PM (EST)</p>
+            <p>Sunday: Closed</p>
+            <p style="margin-top:4px;font-size:12px;">We reply to emails within 24 hours on weekends.</p>
+          </div>
+        </div>
+
+        <div class="live-chat-card">
+          <h4>💡 Prefer live chat?</h4>
+          <p>Click the WhatsApp button in the bottom-right corner to chat with our team instantly.</p>
+          <a href="https://wa.me/" class="btn-primary">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter" id="newsletter" aria-labelledby="newsletterTitle">
+  <div class="newsletter-inner">
+    <div class="newsletter-eyebrow">STAY CONNECTED</div>
+    <h2 id="newsletterTitle">Never miss an article</h2>
+    <p class="newsletter-copy">Get hookah insights, product updates, and exclusive offers delivered to your inbox.</p>
+    <form class="newsletter-form" onsubmit="submitNewsletter(event)" novalidate>
+      <div class="newsletter-row">
+        <label class="sr-only" for="newsletterEmail">Email address</label>
+        <input id="newsletterEmail" name="email" type="email" autocomplete="email" placeholder="Email address" required aria-describedby="newsletterStatus">
+        <button type="submit">Subscribe</button>
+      </div>
+      <label class="newsletter-consent"><input id="newsletterConsent" type="checkbox" required><span>I agree to receive marketing emails and accept the <a href="information.html#privacy">Privacy Policy</a>.</span></label>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+      <p class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="flogo"><span class="dot"></span>SOLUNA</div>
+      <p>The intelligent hookah heat head — charcoal-free precision for the modern hookah experience.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="soluna-x1.html">SOLUNA X1</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="support.html#faq">FAQ</a>
+      <a href="support.html#contact">Contact</a>
+      <a href="support.html#track">Track Order</a>
+    </div>
+    <div class="footer-col">
+      <h4>Policies &amp; Legal</h4>
+      <a href="information.html#terms">Terms of Service</a>
+      <a href="information.html#privacy">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="information.html#returns">Return Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <a href="about.html#about">About SOLUNA</a>
+      <a href="about.html#affiliate">Affiliate Program</a>
+      <a href="about.html#partner">Become a Partner</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 SOLUNA. All rights reserved. · 21+ Only.</span>
+  </div>
+  <div class="footer-utility">
+    <div class="secure-payment-lockup" role="img" aria-label="100% secure payment. Visa, Mastercard, American Express and Discover accepted.">
+      <img src="data:image/png;base64,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gJLcXGIN9McmKyQAPzo3bdo4ZcrkHiHdLKeE9ggeENH32WcnrF37HXjYFO7QzToCMaoVlSlbb2+ckf1VuAWVZf1z//O4fMP0iosbwcNOtSJNCRb7NJEASnITQWE3JIAEkAASQAJtSwAluW35Wol1DAMJIAEkgATangBKctszxhmQABJAAkgACTSBAEpyEyBhF+slgJEhASSABCyHAEqy5awFeoIEkAASQAKdmgBKcqdefgzeeglgZEgACXQ8AijJHW/N0GMkgASQABKwSgIoyVa5rBgUErBeAhgZErBeAijJ1ru2GBkSQAJIAAl0KAIoyR1qudBZJIAErJcARoYEUJLxawAJIAEkgASQgEUQQEm2iGVAJ5AAEkAC1ksAI2sqAZTkppLCfkgACSABJIAE2pQASnKb4kXjSAAJIAEkYL0EWjsylOTWJor2kAASQAJIAAm0iABKcouw4SAkgASQABJAAq1NwHIkubUjQ3tIAAkgASSABDoUAZTkDrVc6CwSQAJIAAlYLwGU5LZfW5wBCSABJIAEkEATCKAkNwESdkECSAAJIAEk0PYEUJLbnrH1zoCRIQEkgASQQCsSQEluRZhoCgkgASSABJBAywmgJLecHY60XgIYGRJAAkigHQigJLcDdJwSCSABJIAEkMCDBFCSH2SCNUjAeglgZEgACVgwAZRkC14cdA0JIAEkgAQ6EwGU5M602hgrErBeAhgZErACAijJVrCIGAISQAJIAAlYAwGUZGtYRYwBCSAB6yWAkXUiAijJnWixMVQkgASQABKwZAIoyZa8OugbEkACSMB6CWBkDxBASX4ACVYgASSABJAAEmgPAijJ7UEd50QCSAAJIAHrJdDiyFCSW4y79qy8AAAAwElEQVQOByIBJIAEkAASaE0CKMmtSRNtIQEkgASQABJoMQGLl+QWR4YDkQASQAJIAAl0KAIoyR1qudBZJIAEkAASsF4CKMnttrY4MRJAAkgACSCB2gRQkmvTwHskgASQABJAAu1GACW53dBb78QYGRJAAkgACbSEAEpyS6jhGCSABJAAEkACrU4AJbnVkaJB6yWAkSEBJIAE2pIASnJb0kXbSAAJIAEkgASaTAAlucmosCMSsF4CGBkSQAKWQOD/AQAA//8G1B7aAAAABklEQVQDAChonoXnMKYcAAAAAElFTkSuQmCC" alt="" aria-hidden="true">
+    </div>
+    <div class="footer-follow">
+      <div>
+        <h4>FOLLOW US</h4>
+        <p>Stay connected and never miss a beat. Discover more with us, today!</p>
+      </div>
+      <div class="footer-follow-icons" aria-label="Follow SOLUNA on social media">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Instagram (opens in a new tab)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5Zm8.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube (opens in a new tab)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.5 3.56 12 3.56 12 3.56s-7.5 0-9.38.51A3.01 3.01 0 0 0 .5 6.2C0 8.08 0 12 0 12s0 3.92.5 5.8a3.01 3.01 0 0 0 2.12 2.13c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.01 3.01 0 0 0 2.12-2.13C24 15.92 24 12 24 12s0-3.92-.5-5.8ZM9.55 15.57V8.43L15.82 12l-6.27 3.57Z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/" class="whatsapp-float" title="Chat with us" aria-label="Chat with SOLUNA on WhatsApp"><img src="data:image/webp;base64,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" alt="WhatsApp"></a>
+
+<!-- ===== CART SIDEBAR (compact) ===== -->
+<div class="register-overlay" id="registerOverlay" role="dialog" aria-modal="true" aria-labelledby="registerTitle" onclick="if(event.target===this)closeRegisterModal()">
+  <form class="register-card" onsubmit="submitRegistration(event)">
+    <h2 id="registerTitle">Create your SOLUNA account</h2>
+    <p>Register for order updates, product news, and a faster checkout.</p>
+    <label class="sr-only" for="registerName">Full name</label>
+    <input id="registerName" type="text" name="name" placeholder="Full name" autocomplete="name" required>
+    <label class="sr-only" for="registerEmail">Email address</label>
+    <input id="registerEmail" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+    <label class="sr-only" for="registerPassword">Password</label>
+    <input id="registerPassword" type="password" name="password" placeholder="Password" autocomplete="new-password" minlength="8" required>
+    <div class="register-actions"><button type="button" onclick="closeRegisterModal()">Cancel</button><button class="register-submit" type="submit">Register</button></div>
+  </form>
+</div>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Cart <span style="background:var(--gold);color:#1a1a1a;font-size:12px;font-weight:700;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;" id="cartCount">0</span></h3>
+    <button class="cart-close" type="button" onclick="closeCart()" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><p style="font-size:48px;margin-bottom:12px;">🛒</p><p>Your cart is empty</p></div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row"><span>Total</span><span class="total-price" id="cartTotal">$0</span></div>
+    <div class="cart-payment-grid">
+      <button class="cart-payment-btn cart-paypal" onclick="checkoutPayPal()">₱ PayPal</button>
+      <button class="cart-payment-btn cart-stripe" onclick="checkoutStripe()">💳 Card</button>
+      <button class="cart-payment-btn cart-whatsapp" onclick="checkoutWhatsApp()">💬 WhatsApp</button>
+    </div>
+    <p class="cart-tax-note">Tax included · Worldwide shipping · 30-day returns</p>
+  </div>
+</div>
+
+
+<script>
+
+
+function setLanguage(lang) {
+  var names = { en:'English', de:'Deutsch', fr:'Français', zh:'中文' };
+  document.documentElement.lang = lang;
+  localStorage.setItem('soluna_language', lang);
+  var flag = document.querySelector('.language-flag');
+  if (flag) flag.alt = names[lang] || names.en;
+}
+function toggleNav(button) {
+  var nav = document.getElementById('primaryNav');
+  var open = nav.classList.toggle('mobile-open');
+  button.setAttribute('aria-expanded', String(open));
+  button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+}
+function closeNav() {
+  var nav = document.getElementById('primaryNav');
+  var button = document.querySelector('.nav-hamburger');
+  if (nav) nav.classList.remove('mobile-open');
+  if (button) { button.setAttribute('aria-expanded','false'); button.setAttribute('aria-label','Open navigation'); }
+}
+function submitNewsletter(event) {
+  event.preventDefault();
+  var email = document.getElementById('newsletterEmail');
+  var consent = document.getElementById('newsletterConsent');
+  var status = document.getElementById('newsletterStatus');
+  if (!email.checkValidity()) { status.textContent = 'Enter a valid email address.'; email.focus(); return; }
+  if (!consent.checked) { status.textContent = 'Please accept the Privacy Policy to subscribe.'; consent.focus(); return; }
+  status.textContent = 'Newsletter signup is not connected on this static preview.';
+  event.target.reset();
+}
+function openRegisterModal() { document.getElementById('registerOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
+function closeRegisterModal() { document.getElementById('registerOverlay').classList.remove('show'); document.body.style.overflow=''; }
+function submitRegistration(event) { event.preventDefault(); alert('Registration details captured. Connect this form to your account service to create the account.'); closeRegisterModal(); event.target.reset(); }
+setLanguage(localStorage.getItem('soluna_language') || 'en');
+
+// ===== ARTICLE EXPAND =====
+function toggleArticle(btn) {
+  var target = document.getElementById(btn.getAttribute('data-target'));
+  var isExpanded = target.classList.contains('expanded');
+  target.classList.toggle('expanded');
+  btn.textContent = isExpanded ? 'Read Full Article →' : 'Collapse Article ↑';
+  if (!isExpanded) { target.scrollIntoView({ behavior:'smooth', block:'start' }); }
+}
+
+// ===== CATEGORY FILTER =====
+function filterPosts(cat, btn) {
+  document.querySelectorAll('.cat-tag').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('#blogGrid .blog-card');
+  cards.forEach(function(card){
+    if (cat === 'all' || card.getAttribute('data-category') === cat) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ===== CART SYSTEM (compact) =====
+(function(){
+  var cart = [];
+  var CART_KEY = 'soluna_cart';
+  try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch(e) { cart = []; }
+  function save() { localStorage.setItem(CART_KEY, JSON.stringify(cart)); updateCartUI(); }
+
+  window.addToCart = function(name, price, img, variant) {
+    var found = cart.find(function(item) { return item.name === name && item.variant === (variant || ''); });
+    if (found) { found.qty++; }
+    else { cart.push({ name:name, price:price, img:img||'📦', variant:variant||'', qty:1 }); }
+    // Meta Pixel: AddToCart
+    if (typeof fbq !== 'undefined') { fbq('track', 'AddToCart', { content_name: name, content_ids: [name], content_type: 'product', value: price, currency: 'USD' }); }
+    save(); openCart();
+  };
+  window.removeFromCart = function(index) { cart.splice(index, 1); save(); };
+  window.updateQty = function(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) { cart.splice(index, 1); }
+    save();
+  };
+  function cartTotal() { return cart.reduce(function(s,i){ return s + i.price*i.qty; }, 0); }
+  function cartCount() { return cart.reduce(function(s,i){ return s + i.qty; }, 0); }
+
+  function updateCartUI() {
+    var count = cartCount();
+    var countEl = document.getElementById('cartCount');
+    var badge = document.getElementById('navCartBadge');
+    countEl.textContent = count;
+    if (badge) { badge.textContent = count; badge.classList.toggle('has-items', count > 0); }
+    document.getElementById('cartFooter').style.display = cart.length > 0 ? 'block' : 'none';
+    document.getElementById('cartTotal').textContent = '$' + cartTotal().toLocaleString();
+    if (cart.length === 0) {
+      document.getElementById('cartItems').innerHTML = '<div class="cart-empty"><p style="font-size:48px;margin-bottom:12px;">🛒</p><p>Your cart is empty</p></div>';
+      return;
+    }
+    document.getElementById('cartItems').innerHTML = cart.map(function(item, i) {
+      return '<div class="cart-item"><div class="cart-item-img">' + item.img + '</div><div class="cart-item-info"><h4>' + item.name + '</h4>' +
+        (item.variant ? '<div style="font-size:12px;color:var(--mist);">' + item.variant + '</div>' : '') +
+        '<div class="ci-price">$' + item.price.toLocaleString() + '</div><div class="cart-qty-row">' +
+        '<button onclick="updateQty(' + i + ',-1)">−</button><span>' + item.qty + '</span><button onclick="updateQty(' + i + ',1)">+</button></div>' +
+        '<button class="cart-item-remove" onclick="removeFromCart(' + i + ')">Remove</button></div></div>';
+    }).join('');
+  }
+
+  window.openCart = function() { document.getElementById('cartOverlay').classList.add('show'); document.getElementById('cartSidebar').classList.add('show'); document.body.style.overflow = 'hidden'; };
+  window.closeCart = function() { document.getElementById('cartOverlay').classList.remove('show'); document.getElementById('cartSidebar').classList.remove('show'); document.body.style.overflow = ''; };
+
+  var PAYMENT_CONFIG = {
+    paypal: 'https://paypal.me/SOLUNAofficial',
+    stripe: 'https://buy.stripe.com/YOUR_LINK',
+    whatsappNumber: '8613800000000',
+    whatsappMsg: 'Hi SOLUNA! I want to order:'
+  };
+
+  window.checkoutPayPal = function() {
+    if (typeof fbq !== 'undefined') { fbq('track', 'InitiateCheckout', { value: cartTotal(), currency: 'USD', payment_method: 'PayPal' }); }
+    var desc = cart.map(function(item) { return item.name + ' x' + item.qty; }).join(', ');
+    window.open(PAYMENT_CONFIG.paypal + '/' + cartTotal() + '?description=' + encodeURIComponent(desc), '_blank');
+  };
+  window.checkoutStripe = function() {
+    if (PAYMENT_CONFIG.stripe.indexOf('YOUR_LINK') > -1) { alert('Stripe payment link not configured. Please use PayPal or WhatsApp.'); return; }
+    window.open(PAYMENT_CONFIG.stripe, '_blank');
+  };
+  window.checkoutWhatsApp = function() {
+    var items = cart.map(function(item) { return '• ' + item.name + ' x' + item.qty + ' = $' + (item.price*item.qty).toLocaleString(); }).join('\n');
+    var msg = PAYMENT_CONFIG.whatsappMsg + '\n\n' + items + '\n\nTotal: $' + cartTotal().toLocaleString() + '\n\nPlease provide shipping address and contact info. Thanks!';
+    window.open('https://wa.me/' + PAYMENT_CONFIG.whatsappNumber + '?text=' + encodeURIComponent(msg), '_blank');
+  };
+
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeCart(); closeRegisterModal(); } });
+  updateCartUI();
+})();
+
+
+// ===== TAB SWITCHING =====
+function switchTab(tabName, btn) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById(tabName).classList.add('active');
+  window.location.hash = tabName;
+  closeNav();
+}
+
+// ===== PARTNER FORM =====
+function submitPartner() {
+  var name = document.getElementById('bizName').value.trim();
+  var type = document.getElementById('bizType').value;
+  var loc = document.getElementById('bizLocation').value.trim();
+  var email = document.getElementById('bizEmail').value.trim();
+  var desc = document.getElementById('bizDesc').value.trim();
+  if (!name || !type || !email || !desc) {
+    toast('Please fill in all required fields.');
+    return;
+  }
+  toast('✅ Application submitted! Our partnership team will contact you within 48 hours.');
+  document.getElementById('bizName').value = '';
+  document.getElementById('bizType').value = '';
+  document.getElementById('bizLocation').value = '';
+  document.getElementById('bizEmail').value = '';
+  document.getElementById('bizDesc').value = '';
+}
+
+function toast(msg) {
+  var el = document.createElement('div'); el.className = 'toast'; el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(function(){ el.remove(); }, 3000);
+}
+
+function activateTabFromHash() {
+  var hash = window.location.hash.replace('#','');
+  if (hash === 'about' || hash === 'affiliate' || hash === 'partner') {
+    var btn = document.querySelector('.tab-btn[onclick*="'+hash+'"]');
+    if (btn) switchTab(hash, btn);
+  }
+}
+activateTabFromHash();
+window.addEventListener('hashchange', activateTabFromHash);
+window.addEventListener('resize', function(){ if (window.innerWidth > 768) closeNav(); });
+
+
+/* ===== PAGE-SPECIFIC INTERACTIONS ===== */
+
+// ===== TAB SWITCHING =====
+function switchTab(tabName, btn) {
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById(tabName).classList.add('active');
+  if (tabName === 'track') { document.getElementById('trackResult').classList.remove('show'); }
+  window.location.hash = tabName;
+  if (typeof closeNav === 'function') closeNav();
+}
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(qBtn) {
+  var wasOpen = qBtn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q').forEach(function(q){ q.classList.remove('open'); });
+  document.querySelectorAll('.faq-a').forEach(function(a){ a.classList.remove('open'); });
+  // Toggle clicked
+  if (!wasOpen) {
+    qBtn.classList.add('open');
+    qBtn.nextElementSibling.classList.add('open');
+  }
+}
+
+// ===== FAQ FILTER =====
+function filterFaq(cat, btn) {
+  document.querySelectorAll('.faq-cat').forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    if (cat === 'all' || item.getAttribute('data-faq-cat') === cat) {
+      item.style.display = '';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// ===== TRACK ORDER (demo) =====
+function trackOrder() {
+  var orderNum = document.getElementById('orderNumber').value.trim();
+  var email = document.getElementById('orderEmail').value.trim();
+  if (!orderNum || !email) {
+    toast('Please enter both your order number and email address.');
+    return;
+  }
+  toast('Order tracking is not connected on this static preview. Email support@soluna-hookah.com for order status.');
+}
+
+// ===== CONTACT FORM =====
+function submitContact() {
+  var name = document.getElementById('contactName').value.trim();
+  var email = document.getElementById('contactEmail').value.trim();
+  var msg = document.getElementById('contactMsg').value.trim();
+  if (!name || !email || !msg) {
+    toast('Please fill in all required fields.');
+    return;
+  }
+  toast('The contact form is not connected on this static preview. Please email support@soluna-hookah.com.');
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactEmail').value = '';
+  document.getElementById('contactMsg').value = '';
+  document.getElementById('contactTopic').value = '';
+}
+
+function toast(msg) {
+  var el = document.createElement('div'); el.className = 'toast'; el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(function(){ el.remove(); }, 3000);
+}
+
+function activateTabFromHash() {
+  var hash = window.location.hash.replace('#','');
+  if (hash === 'faq' || hash === 'track' || hash === 'contact') {
+    var btn = document.querySelector('.tab-btn[onclick*="'+hash+'"]');
+    if (btn) switchTab(hash, btn);
+  }
+}
+activateTabFromHash();
+window.addEventListener('hashchange', activateTabFromHash);
+
+</script>
+
+</body>
+</html>
