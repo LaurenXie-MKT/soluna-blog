@@ -612,14 +612,7 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
 }
 
 
-/* ===== SHIPPING POLICY WITHIN PRIVACY TAB ===== */
-.shipping-policy-block {
-  margin-top:64px;
-  padding-top:56px;
-  border-top:1px solid rgba(183,154,129,.36);
-  scroll-margin-top:calc(var(--announcement-height) + 96px);
-}
-.shipping-policy-block > h2 { margin-top:8px; }
+/* ===== IN-PAGE SHIPPING POLICY TAB ===== */
 .policy-table-scroll {
   width:100%;
   margin:20px 0;
@@ -629,9 +622,6 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
 }
 .policy-table-scroll .info-table { min-width:720px; margin:0; }
 .policy-table-scroll:focus-visible { outline:2px solid var(--pantone-2312-c); outline-offset:3px; }
-@media (max-width:700px) {
-  .shipping-policy-block { margin-top:48px; padding-top:40px; }
-}
 </style>
 </head>
 <body>
@@ -685,7 +675,8 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
   <button type="button" class="tab-btn active" onclick="switchTab('warranty', this)">🛡️ Warranty</button>
   <button type="button" class="tab-btn" onclick="switchTab('terms', this)">📄 Terms of Service</button>
   <button type="button" class="tab-btn" onclick="switchTab('returns', this)">🔄 Return Policy</button>
-  <button type="button" class="tab-btn" onclick="switchTab('privacy', this)">馃敀 Privacy &amp; Shipping</button>
+  <button type="button" class="tab-btn" onclick="switchTab('privacy', this)">🔒 Privacy Policy</button>
+  <button type="button" class="tab-btn" onclick="switchTab('shipping', this)">馃殮 Shipping Policy</button>
 </div>
 
 <!-- ===== TAB: WARRANTY ===== -->
@@ -892,10 +883,16 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
         <p><strong>Read the Complete Policy</strong></p>
         <p>For privacy questions, data access requests, or deletion requests, contact <a href="mailto:privacy@soluna-hookah.com">privacy@soluna-hookah.com</a>.</p>
       </div>
-      <div class="shipping-policy-block" aria-labelledby="shippingPolicyTitle">
-        <div class="last-updated">Last updated: July 10, 2026</div>
-        <h2 id="shippingPolicyTitle">Shipping Policy</h2>
-        <p>Worldwide delivery options, costs, timeframes, tracking, customs information, and what to expect after placing an order.</p>
+    </div>
+  </div>
+</section>
+<!-- ===== TAB: SHIPPING POLICY ===== -->
+<section id="shipping" class="tab-panel">
+  <div class="section-inner">
+    <div class="info-content">
+      <div class="last-updated">Last updated: July 10, 2026</div>
+      <h2>Shipping Policy</h2>
+      <p>Worldwide delivery options, costs, timeframes, tracking, customs information, and what to expect after placing an order.</p>
 
 <h3>1. Free Worldwide Shipping</h3>
       <div class="info-highlight green">
@@ -993,7 +990,6 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
       <p>For information about returns, exchanges, and our 30-day money-back guarantee, please see our <a href="information.html#returns">Return Policy</a>.</p>
 
     
-      </div>
     </div>
   </div>
 </section>
@@ -1040,7 +1036,7 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
       <h4>Policies &amp; Legal</h4>
       <a href="information.html#terms">Terms of Service</a>
       <a href="information.html#privacy">Privacy Policy</a>
-      <a href="information.html#privacy">Shipping Policy</a>
+      <a href="information.html#shipping">Shipping Policy</a>
       <a href="information.html#returns">Return Policy</a>
     </div>
     <div class="footer-col">
@@ -1308,7 +1304,7 @@ function switchTab(tabName, btn) {
 }
 function activateTabFromHash() {
   var hash = window.location.hash.replace('#','');
-  if (hash === 'warranty' || hash === 'terms' || hash === 'returns' || hash === 'privacy') {
+  if (hash === 'warranty' || hash === 'terms' || hash === 'returns' || hash === 'privacy' || hash === 'shipping') {
     var btn = document.querySelector('.tab-btn[onclick*="'+hash+'"]');
     if (btn) switchTab(hash, btn);
   }
