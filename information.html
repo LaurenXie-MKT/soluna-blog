@@ -611,6 +611,27 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
   .footer-inner { grid-template-columns:1fr; }
 }
 
+
+/* ===== SHIPPING POLICY WITHIN PRIVACY TAB ===== */
+.shipping-policy-block {
+  margin-top:64px;
+  padding-top:56px;
+  border-top:1px solid rgba(183,154,129,.36);
+  scroll-margin-top:calc(var(--announcement-height) + 96px);
+}
+.shipping-policy-block > h2 { margin-top:8px; }
+.policy-table-scroll {
+  width:100%;
+  margin:20px 0;
+  overflow-x:auto;
+  border-radius:var(--radius);
+  -webkit-overflow-scrolling:touch;
+}
+.policy-table-scroll .info-table { min-width:720px; margin:0; }
+.policy-table-scroll:focus-visible { outline:2px solid var(--pantone-2312-c); outline-offset:3px; }
+@media (max-width:700px) {
+  .shipping-policy-block { margin-top:48px; padding-top:40px; }
+}
 </style>
 </head>
 <body>
@@ -664,8 +685,7 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
   <button type="button" class="tab-btn active" onclick="switchTab('warranty', this)">🛡️ Warranty</button>
   <button type="button" class="tab-btn" onclick="switchTab('terms', this)">📄 Terms of Service</button>
   <button type="button" class="tab-btn" onclick="switchTab('returns', this)">🔄 Return Policy</button>
-  <button type="button" class="tab-btn" onclick="switchTab('privacy', this)">🔒 Privacy Policy</button>
-  <a class="tab-btn" href="shipping-policy.html">Shipping Policy</a>
+  <button type="button" class="tab-btn" onclick="switchTab('privacy', this)">馃敀 Privacy &amp; Shipping</button>
 </div>
 
 <!-- ===== TAB: WARRANTY ===== -->
@@ -870,7 +890,109 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
 
       <div class="info-highlight">
         <p><strong>Read the Complete Policy</strong></p>
-        <p>This page provides a summary. Review the <a href="privacy-policy.html">full SOLUNA Privacy Policy →</a> for information about cookies, data retention, international transfers, children's privacy, and your legal rights.</p>
+        <p>For privacy questions, data access requests, or deletion requests, contact <a href="mailto:privacy@soluna-hookah.com">privacy@soluna-hookah.com</a>.</p>
+      </div>
+      <div class="shipping-policy-block" aria-labelledby="shippingPolicyTitle">
+        <div class="last-updated">Last updated: July 10, 2026</div>
+        <h2 id="shippingPolicyTitle">Shipping Policy</h2>
+        <p>Worldwide delivery options, costs, timeframes, tracking, customs information, and what to expect after placing an order.</p>
+
+<h3>1. Free Worldwide Shipping</h3>
+      <div class="info-highlight green">
+        <p><strong>✅ Shipping is FREE on all SOLUNA orders — worldwide.</strong></p>
+        <p>No minimum order. No hidden fees. We believe premium shipping should come standard.</p>
+      </div>
+
+      <h3>2. Delivery Timeframes</h3>
+
+      <div class="policy-table-scroll" role="region" aria-label="Shipping delivery timeframes" tabindex="0"><table class="info-table">
+        <tr><th>Region</th><th>Standard (Free)</th><th>Express</th><th>Carrier</th></tr>
+        <tr>
+          <td>🇺🇸 United States</td>
+          <td>5–8 business days</td>
+          <td>2–3 business days (+$19)</td>
+          <td>USPS / FedEx</td>
+        </tr>
+        <tr>
+          <td>🇪🇺 Europe (EU)</td>
+          <td>5–10 business days</td>
+          <td>3–5 business days (+$25)</td>
+          <td>DHL Express</td>
+        </tr>
+        <tr>
+          <td>🇬🇧 United Kingdom</td>
+          <td>5–10 business days</td>
+          <td>3–5 business days (+$25)</td>
+          <td>DHL Express / Royal Mail</td>
+        </tr>
+        <tr>
+          <td>🇦🇺 Australia / 🇳🇿 NZ</td>
+          <td>7–12 business days</td>
+          <td>4–7 business days (+$30)</td>
+          <td>DHL Express / AusPost</td>
+        </tr>
+        <tr>
+          <td>🇸🇦 Middle East</td>
+          <td>5–10 business days</td>
+          <td>3–5 business days (+$25)</td>
+          <td>DHL Express / Aramex</td>
+        </tr>
+        <tr>
+          <td>🇸🇬 Asia Pacific</td>
+          <td>7–12 business days</td>
+          <td>4–7 business days (+$25)</td>
+          <td>DHL Express</td>
+        </tr>
+        <tr>
+          <td>🌍 Rest of World</td>
+          <td>10–15 business days</td>
+          <td>5–10 business days (+$35)</td>
+          <td>DHL Express</td>
+        </tr>
+      </table></div>
+
+      <p><em>Note: Business days exclude weekends and public holidays. Delivery times are estimates and may vary during peak seasons.</em></p>
+
+      <h3>3. Order Processing</h3>
+      <ul>
+        <li>Orders placed before 2:00 PM EST on business days are processed the same day</li>
+        <li>Orders placed after 2:00 PM or on weekends/holidays are processed the next business day</li>
+        <li>You'll receive a confirmation email with your tracking number once your order ships</li>
+      </ul>
+
+      <h3>4. Customs, Duties &amp; Taxes</h3>
+      <div class="info-highlight">
+        <p><strong>🌐 International orders may be subject to import duties, taxes, and customs clearance fees.</strong></p>
+        <p>These charges are determined by your country's customs authority and are the <strong>responsibility of the customer</strong>. SOLUNA is not responsible for customs delays, additional fees, or refused shipments due to customs charges.</p>
+      </div>
+      <p>We recommend checking with your local customs office for estimated duties before ordering. The declared value on the package reflects the actual purchase price.</p>
+
+      <h3>5. Order Tracking</h3>
+      <p>All orders include tracking. You'll receive your tracking number via email once your order ships. You can also:</p>
+      <ul>
+        <li>Track your order anytime on our <a href="support.html#track">Track Your Order</a> page</li>
+        <li>Contact <a href="mailto:support@soluna-hookah.com">support@soluna-hookah.com</a> if your tracking hasn't updated in 5+ business days</li>
+      </ul>
+
+      <h3>6. Shipping Restrictions</h3>
+      <p>Due to local regulations, we cannot ship to certain countries where hookah products are restricted. If your country is not available at checkout, please <a href="support.html#contact">contact us</a> for clarification.</p>
+      <p>All orders require <strong>adult signature confirmation (21+)</strong> upon delivery.</p>
+
+      <h3>7. Lost, Damaged, or Delayed Packages</h3>
+      <ul>
+        <li><strong>Lost packages:</strong> If your package is confirmed lost by the carrier, we will send a replacement at no cost</li>
+        <li><strong>Damaged on arrival:</strong> Contact us within 48 hours of delivery with photos. We'll replace immediately</li>
+        <li><strong>Delayed:</strong> If your order hasn't arrived within 5 business days of the estimated delivery date, contact us for an investigation</li>
+      </ul>
+
+      <h3>8. Incorrect Address</h3>
+      <p>Please double-check your shipping address at checkout. If you notice an error, contact us immediately at <a href="mailto:support@soluna-hookah.com">support@soluna-hookah.com</a>. Once the package has shipped, we cannot change the delivery address.</p>
+      <p>Packages returned to us due to incorrect addresses will be refunded minus the return shipping cost.</p>
+
+      <h3>9. Returns &amp; Exchanges</h3>
+      <p>For information about returns, exchanges, and our 30-day money-back guarantee, please see our <a href="information.html#returns">Return Policy</a>.</p>
+
+    
       </div>
     </div>
   </div>
@@ -918,7 +1040,7 @@ footer { padding:60px 32px 40px; border-top:1px solid rgba(255,255,255,.06); bac
       <h4>Policies &amp; Legal</h4>
       <a href="information.html#terms">Terms of Service</a>
       <a href="information.html#privacy">Privacy Policy</a>
-      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="information.html#privacy">Shipping Policy</a>
       <a href="information.html#returns">Return Policy</a>
     </div>
     <div class="footer-col">
