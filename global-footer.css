@@ -1,0 +1,126 @@
+/* SOLUNA GLOBAL FOOTER V2 — PANTONE 2312 C */
+.site-footer-v2 {
+  --footer-accent:#b79a81;
+  --footer-bg:#0d0f12;
+  --footer-text:#f0ebe0;
+  --footer-muted:#8b939f;
+  padding:0 32px 36px;
+  border-top:1px solid rgba(255,255,255,.07);
+  background:var(--footer-bg);
+  color:var(--footer-text);
+}
+.footer-v2-main {
+  width:min(1588px,100%);
+  margin:0 auto;
+  padding:0 0 48px;
+  display:grid;
+  grid-template-columns:minmax(310px,2.2fr) repeat(4,minmax(130px,1fr));
+  gap:40px;
+}
+.footer-v2-brand { padding-right:16px; }
+.footer-v2-logo {
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  color:var(--footer-text);
+  font-size:27px;
+  font-weight:850;
+  letter-spacing:.02em;
+  text-decoration:none;
+}
+.footer-v2-logo span {
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:var(--footer-accent);
+  box-shadow:0 0 18px rgba(183,154,129,.72);
+}
+.footer-v2-brand > p {
+  max-width:470px;
+  margin:22px 0 28px;
+  color:var(--footer-muted);
+  font-size:16px;
+  line-height:1.8;
+}
+.footer-v2-social {
+  max-width:470px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.footer-v2-social h2,
+.footer-v2-contact h2,
+.footer-v2-column h2 {
+  margin:0;
+  color:var(--footer-accent);
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.14em;
+}
+.footer-v2-social-icons { display:flex; gap:10px; }
+.footer-v2-social-icons a {
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:50%;
+  color:var(--footer-text);
+  text-decoration:none;
+  transition:border-color .2s ease,color .2s ease,transform .2s ease;
+}
+.footer-v2-social-icons a:hover,
+.footer-v2-social-icons a:focus-visible {
+  border-color:var(--footer-accent);
+  color:var(--footer-accent);
+  transform:translateY(-2px);
+}
+.footer-v2-social-icons svg { width:20px; height:20px; fill:currentColor; }
+.footer-v2-contact { margin-top:32px; }
+.footer-v2-contact dl { margin:15px 0 0; display:grid; gap:9px; }
+.footer-v2-contact dl div { display:grid; grid-template-columns:64px 1fr; gap:8px; align-items:start; }
+.footer-v2-contact dt { color:var(--footer-text); font-size:13px; font-weight:800; }
+.footer-v2-contact dd { margin:0; color:var(--footer-muted); font-size:14px; }
+.footer-v2-contact a { color:inherit; text-decoration:none; }
+.footer-v2-contact a:hover { color:var(--footer-text); }
+.footer-v2-column { display:flex; flex-direction:column; align-items:flex-start; gap:17px; }
+.footer-v2-column h2 { margin-bottom:6px; color:var(--footer-muted); }
+.footer-v2-column a { color:var(--footer-muted); font-size:15px; text-decoration:none; transition:color .2s ease; }
+.footer-v2-column a:hover,.footer-v2-column a:focus-visible { color:var(--footer-text); }
+.footer-v2-bottom {
+  width:min(1588px,100%);
+  margin:0 auto;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+}
+.footer-v2-bottom p { margin:0; color:var(--footer-muted); font-size:14px; }
+.footer-v2-payment { width:min(556px,45vw); overflow:hidden; line-height:0; }
+.footer-v2-payment img { width:100%; height:auto; display:block; }
+.site-footer-v2 a:focus-visible { outline:2px solid var(--footer-accent); outline-offset:4px; border-radius:3px; }
+
+@media (max-width:1100px) {
+  .footer-v2-main { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .footer-v2-brand { grid-column:1 / -1; padding-right:0; }
+  .footer-v2-brand > p,.footer-v2-social { max-width:620px; }
+}
+@media (max-width:700px) {
+  .site-footer-v2 { padding:0 18px 28px; }
+  .footer-v2-main { grid-template-columns:1fr; gap:34px; padding-bottom:38px; }
+  .footer-v2-brand { grid-column:auto; }
+  .footer-v2-social { align-items:flex-start; }
+  .footer-v2-column { gap:13px; }
+  .footer-v2-bottom { align-items:flex-start; flex-direction:column; }
+  .footer-v2-payment { width:100%; max-width:556px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .footer-v2-social-icons a,.footer-v2-column a { transition:none; }
+}
+
+
